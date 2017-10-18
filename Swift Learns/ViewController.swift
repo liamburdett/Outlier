@@ -10,9 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var WelcomeLabel: UILabel!;
+    
+    var tapCount = 0
+    
+    @IBAction func GetStarted(_ sender: UIButton){
+    
+        tapCount = tapCount + 1
+        
+        if tapCount >= 10 {
+            WelcomeLabel.text = "Quit pressing"
+        }
+    }
+    
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad();
         // Do any additional setup after loading the view, typically from a nib.
+       
+        self.view.backgroundColor = UIColor.yellow;
+       
+        WelcomeLabel.text = "Hello Liam."
     }
 
     override func didReceiveMemoryWarning() {
